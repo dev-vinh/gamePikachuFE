@@ -24,7 +24,47 @@ height: calc(100vh - 90px);
     text-align: center;
     position: absolute;
     background-color: aliceblue;
+    z-index: 10;
 }
 #levelMenu .nav-link{
-    color: white;
+    color: black;
+}
+#levelMenu .nav-link:hover{
+    color: darkcyan;
+    background-color: aquamarine;
+}
+.header-g{
+    background-color: darkgrey;
+}
+.header-g .playtime{
+    height: 20px;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+.mainGame{
+    height: 100%;
+}
+.tool{
+    border-right: 3px solid black;
+}
+.board{
+    display:grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
+    gap: 6px;
+    padding: 10px;
+    background-color: white;
+    height: 90%;
+    aspect-ratio: 1/1;
+}
+.cell{
+    background-color: darkgrey;
+    border: 2px solid antiquewhite;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cell:hover{
+    background-color: aquamarine;
 }
