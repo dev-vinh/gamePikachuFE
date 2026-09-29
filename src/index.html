@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PIKACHU</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fontawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="css/styleIndex.css">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row top-row">
+        <div class="col-2 navbar-nav">
+            <nav class="navbar">
+                <button class="btn btn-primary"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#levelMenu"
+                        aria-expanded="false"
+                        aria-controls="levelMenu">
+                    Menu
+                </button>
+                <div class="collapse" id="levelMenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 6</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" >Level 7</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-10 header-g d-flex align-items-center">
+            <h4 class="mb-0 me-3" id="levelText">Level 1</h4>
+            <div class="playtime flex-grow-1" >
+                <div class="progress-bar bg-success" style="width: 100%">120 </div>
+            </div>
+            <h4 class="mb-3 ms-3">Điểm: <span id="score">9999</span></h4>
+        </div>
+    </div>
+    <div class="row main-row">
+        <div class="col-2 tool d-flex flex-column align-items-center justify-content-around">
+            <button class="btn btn-danger">
+                <i class="fa-solid fa-landmark-flag">Gợi ý</i>
+            </button>
+            <button class="btn btn-danger">
+                <i class="fa-solid fa-landmark-flag">Trộn lại</i>
+            </button>
+            <button class="btn btn-danger">
+                <i class="fa-solid fa-pause">Tạm dừng</i>
+            </button>
+        </div>
+        <div class="col-10 mainGame d-flex align-items-center justify-content-around">
+            <div class="board" id="board"></div>
+        </div>
+    </div>
+</div>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/mainIndex.js"></script>
+</body>
+</html>
