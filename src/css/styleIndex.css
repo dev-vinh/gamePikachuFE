@@ -130,6 +130,11 @@ height: calc(100vh - 90px);
     overflow: hidden;
 
 }
+.cell{
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+}
 .cell image{
     width: 100%;
     height: 100%;

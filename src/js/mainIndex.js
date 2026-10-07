@@ -13,17 +13,63 @@ const listImange=[
     'src/image/15.png','src/image/16.png',
     'src/image/17.png','src/image/18.png',
     'src/image/19.png','src/image/20.png'];
-    function loadBoard() {
-        board.innerHTML = '';
-        for (let i = 0; i < totalcell; i++) {
-            const cell = document.createElement('div');
-            cell.className = 'cell';
-            const imgSrc = listImange[Math.floor(Math.random() * listImange.length)];
-            const cellImg = document.createElement('img');
-            cellImg.src = imgSrc;
-            cell.appendChild(cellImg);
-            board.appendChild(cell);
+var boardGame=[];
+var selecCells=null;
+var currentLevel=1;
+const boardCol=cols+2;
+const boardRow=rows+2;
+
+function mixArray(arr) {
+    for(let i=arr.length-1;i>=1;i--){
+        let a = Math.floor(Math.random() * (i+1));
+        let temp = arr[i];
+        arr[i]=arr[a];
+        arr[a]=temp;
+    }
+}
+
+function createBoard(){
+    let fistArray = [];
+    let pairs = totalcell / 2;
+    for(let i=0;i<pairs;i++){
+        let typeID = (i % listImange.length)+1;
+        fistArray.push(typeID);
+        fistArray.push(typeID);
+    }
+    mixArray(fistArray);
+    boardGame=[];
+    for(let i=0;i<boardRow;i++){
+        let row=[];
+        for(let j=0;j<boardCol;j++){
+            row.push(0);
+        }
+        boardGame.push(row);
+    }
+    let index=0;
+    for(let i=1;i<=rows;i++){
+        for(let j=1;j<=cols;j++){
+            boardGame[i][j]=fistArray[index];
+            index++;
         }
     }
-loadBoard();
-
+}
+function loadBoard(){
+    board.innerHTML='';
+    for(let i=0; i<boardRow;i++){
+        for(let j=0;j<boardCol;j++){
+            board.appendChild(createCell(i,j));
+        }
+    }
+}
+function createCell(r, c) {
+    let cell=document.createElement("div");
+    if(boardGame[r][c]>0){
+        let cellImage=document.createElement("img");
+        cell.className= "cell";
+        cellImage.src=listImange[boardGame[r][c]-1];
+        cell.appendChild(cellImage);
+    }
+    return cell;
+}
+createBoard()
+loadBoard()
